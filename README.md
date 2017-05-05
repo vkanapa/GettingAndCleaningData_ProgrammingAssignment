@@ -39,6 +39,7 @@ Data$Subject <- as.factor(Data$Subject)
 Melted_Data <- melt(Data, id= c("Subject", "Activity"))
 Melted_Data.mean <- dcast(Melted_Data , Subject+Activity ~ variable, mean)
 
+#Load the data into another file in the same folder
 write.table(Melted_Data.mean, "tidy.txt", row.names = FALSE, quote = FALSE)
 
 
